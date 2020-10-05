@@ -14,6 +14,7 @@ else
         echo "Employee is abscent"
 fi
 
+
 ##code for part time wage
 isPartTime=1;
 isFullTime=2;
@@ -76,3 +77,15 @@ do
                 totalSalary=$(($totalSalary+$salary));
 done
 
+##code for calculating daily employee wage
+isPresent=1;
+randomCheck=$((RANDOM%2));
+
+if [ $isPresent -eq $randomCheck ];
+then
+        empRatePerHr=20;
+        empHrs=8;
+        salary=$(( $empHrs*$empRatePerHr ));
+else
+        salary=0;
+fi
