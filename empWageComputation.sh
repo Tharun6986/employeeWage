@@ -1,16 +1,17 @@
 #!/bin/bash -x
-echo "welcome to employee wage calculation"
+isPartTime=1;
+isFullTime=2;
+empRatePerHr=20;
+randomCheck=$(( RANDOM%3 ));
 
-##code for attendance
-
-
-isPresent=1;
-randomCheck=$(( RANDOM%2 ));
-
-if [ $isPresent -eq $randomCheck ]
+if [ $isFullTime -eq $randomCheck ];
 then
-        echo "Employee is present"
+	empHrs=8;
+elif [ $isPartTime -eq $randomCheck ];
+then
+	empHrs=4;
 else
-        echo "Employee is abscent"
+	empHrs=0;
 fi
 
+salary=$(($empHrs*$empRatePerHr));
